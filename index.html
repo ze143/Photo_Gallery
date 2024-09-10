@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        
+        .myImg {
+          border-radius: 5px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+        
+        .myImg:hover {opacity: 0.7;}
+        
+        /* The Modal (background) */
+        .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          padding-top: 100px; /* Location of the box */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+        
+        /* Modal Content (image) */
+        .modal-content {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+        }
+        
+        /* Caption of Modal Image */
+        #caption {
+          margin: auto;
+          display: block;
+          width: 80%;
+          max-width: 700px;
+          text-align: center;
+          color: #ccc;
+          padding: 10px 0;
+          height: 150px;
+        }
+        
+        /* Add Animation */
+        .modal-content, #caption {  
+          -webkit-animation-name: zoom;
+          -webkit-animation-duration: 0.6s;
+          animation-name: zoom;
+          animation-duration: 0.6s;
+        }
+        
+        @-webkit-keyframes zoom {
+          from {-webkit-transform:scale(0)} 
+          to {-webkit-transform:scale(1)}
+        }
+        
+        @keyframes zoom {
+          from {transform:scale(0)} 
+          to {transform:scale(1)}
+        }
+        
+        /* The Close Button */
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+          .modal-content {
+            width: 100%;
+          }
+        }
+        nav {
+            background-color: #eee;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 999;
+            transition: top 0.5s ease;
+            box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content:space-around;
+        }
+        footer {
+            text-align: center;
+            background-color: #eee;
+            padding: 50px;
+            font-size: 15px;
+            color: #333;
+            margin: -1px;
+        }
+        .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 10px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+    </style>
+</head>
+<body>
+    <!--Nav-->
+    <nav>
+        <p style="text-decoration: none; color: black; font-size: large; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; "><b> Photo Gallery </b></p>
+        <a href="#natural"  style="text-decoration: none; color: black; font-size: large; ">Natural</a>
+        <a href="#sky" style="text-decoration: none; color: black; font-size: large; ">Sky</a>
+        <a href="#mountain" style="text-decoration: none; color: black; font-size: large; ">Mountain</a>
+    </nav>
+    <br><br><br><br>
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+
+    <!--img natural-->
+    <div class="natural">
+        <h2 id="natural" style="height: 30px; width: 20px; padding: 12px; margin:10px; background-color:#eee;">Natural</h2>
+        <br>
+        <img class="myImg" src="/photos/Natural/10 Days in Croatia_ The Perfect Croatia Itinerary - Road Affair.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/10 photos qui vont vous donner envie de vous mettre au vert.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/Time Magazine Features the Smoky Mountains to Celebrate 100 Years of the National Park Service.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/52bedd66-ed28-4868-8bb9-5ccf1fedac74.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/Blausee_ o lago azul incrível da Suíça!.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/Summer FOREVER shared by @Emily_and_Aleksandra.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/6 Very Best Day Trips from Luxembourg You Must Take _ solosophie.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/Alleppey Travel ULTIMATE Guide for backpackers in Kerala Backwaters PHOTOS Backpacking India _ Flash.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/10 Days in Croatia_ The Perfect Croatia Itinerary - Road Affair.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/10 photos qui vont vous donner envie de vous mettre au vert.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/Time Magazine Features the Smoky Mountains to Celebrate 100 Years of the National Park Service.jfif" alt="natural" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Natural/52bedd66-ed28-4868-8bb9-5ccf1fedac74.jfif" alt="natural" style="width:100%;max-width:300px">
+    </div>
+
+    <br><hr><br>
+
+     <!--img Sky-->
+     <div class="sky">
+        <br>
+        <h2 id="sky" style="height: 30px; width: 20px; padding: 12px; margin:10px; background-color:#eee;">Sky</h2>
+        <br>
+        <img class="myImg" src="/photos/Sky/16c2ae78-030c-45aa-89ca-22b1732fe755.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/50+ Cloud Aesthetic Wallpapers For iPhone (2023 List) _ Sky photography, Sky aesthetic, Cloud drawing.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/63ef966c-c914-4180-94b4-92f26802425d.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/baec5cce-0bd0-42f3-a94d-fe281ebc5f49.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/Butterfly Valley_ one of Turkey’s most unspoiled spots - Property Turkey.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/decb5d73-48c9-47cd-848b-8254c80f659a.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/Download AI generated Celestial beauty Divine rays break through clouds, revealing serene panorama Vertical Mobile Wallpaper for free.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky//Monday Morning Cloud Pictures.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/16c2ae78-030c-45aa-89ca-22b1732fe755.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/50+ Cloud Aesthetic Wallpapers For iPhone (2023 List) _ Sky photography, Sky aesthetic, Cloud drawing.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/63ef966c-c914-4180-94b4-92f26802425d.jfif" alt="Sky" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/Sky/baec5cce-0bd0-42f3-a94d-fe281ebc5f49.jfif" alt="Sky" style="width:100%;max-width:300px">
+    </div>
+    <br><hr><br>
+    
+    <!--img mountain-->
+    <div class="mountain">
+        <h2 id="mountain" style="height: 30px; width: 20px; padding: 12px; margin:10px; background-color:#eee;">Mountain</h2>
+        <br>
+        <img class="myImg" src="/photos/mountain/30 Free Beautiful Mountain Wallpapers For iPhone You Need See.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/Best Beginner Hikes in Washington State.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/Breathtaking White Mountains Scenic Drive in New Hampshire.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/e2a133fb-0be5-4855-9fc3-11e784dc2611.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/I Am A Mountain Photographer And This Year I Travelled To The Alps To Capture The Colorful Fall There (30 Pics).jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/People In This Online Group Are Sharing Photos Of The Most Beautiful Places They’ve Discovered.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/The Momentous And Magnificent World Of Mountain Photography - Bored Art.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/горы.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/30 Free Beautiful Mountain Wallpapers For iPhone You Need See.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/Best Beginner Hikes in Washington State.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/Breathtaking White Mountains Scenic Drive in New Hampshire.jfif" alt="Mountain" style="width:100%;max-width:300px">
+        <img class="myImg" src="/photos/mountain/e2a133fb-0be5-4855-9fc3-11e784dc2611.jfif" alt="Mountain" style="width:100%;max-width:300px">
+    </div>
+    <br><br>
+
+    <footer>
+        <p><b>&#169; Ziad Abdelkader</b></p>
+        <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+        <a href="https://www.twitter.com/" class="fa fa-twitter"></a>
+        <a href="https://www.google.com/" class="fa fa-google"></a>
+        <a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
+    </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var images = document.getElementsByClassName("myImg");
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        for (var i = 0; i < images.length; i++) {
+            images[i].onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
